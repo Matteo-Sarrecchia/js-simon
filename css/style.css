@@ -52,10 +52,7 @@ main{
 .hidden{
     display: none;
 }
-
-.input-number{
-    text-align: center;
-    height: 30px;
-    width: 15%;
+ #risultato{
+    padding: 50px;
     font-size: 30px;
-}
+ }

@@ -19,6 +19,7 @@ buttonPlay.addEventListener("click",
         
         // liberare container
         container.innerHTML = ""
+        risultato.innerHTML = ""
         container.classList.remove("hidden")
         let punteggio = 0
         
