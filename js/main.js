@@ -12,35 +12,35 @@ let clock;
 // aggiungo azione al click
 buttonPlay.addEventListener("click",
 
-function numeriCasuali (){ 
-    
-    // liberare container
-    container.innerHTML = ""
+    function numeriCasuali (){ 
+        
+        // liberare container
+        container.innerHTML = ""
 
-    // creare array numeri casuali
-    const arrayNum = arrayRamdomNumber (1, 100, 5);
-    console.log(arrayNum)
+        // creare array numeri casuali
+        const arrayNum = arrayRamdomNumber (1, 100, 5);
+        console.log(arrayNum)
 
-        for (i = 0; i < 5; i++){
-            // const square = createElement("div", "square")
-            const square = createElement ("span", "number")
-            container.append(square);
-            // square.append(span)
-            square.innerHTML = arrayNum[i]
-        } 
-    }
+            for (i = 0; i < 5; i++){
+                // const square = createElement("div", "square")
+                const square = createElement ("span", "number")
+                container.append(square);
+                // square.append(span)
+                square.innerHTML = arrayNum[i]
+            } 
+        }  
 
+        // aggiungo timer
+        setTimeout(
+            function(){
+                container.classList.add("hidden")
+            },
+            2000
+        )
+        
+        )
+        
     
-    
-
-    )
-    
-    setTimeout(
-        function(){
-            container.classList.add("hidden")
-        },
-        5000
-    )
 
 
 // ********************** FUNZIONI ************************
