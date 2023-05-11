@@ -7,7 +7,10 @@
 // VARIABILI GLOBALI
 const buttonPlay = document.getElementById("button-play");
 const container = document.getElementById("container");
-let clock;
+const risultato = document.getElementById("risultato")
+let arrayNum = [];
+let numUser;
+
 
 // aggiungo azione al click
 buttonPlay.addEventListener("click",
@@ -16,31 +19,48 @@ buttonPlay.addEventListener("click",
         
         // liberare container
         container.innerHTML = ""
-
+        container.classList.remove("hidden")
+        let punteggio = 0
+        
         // creare array numeri casuali
         const arrayNum = arrayRamdomNumber (1, 100, 5);
         console.log(arrayNum)
 
-            for (i = 0; i < 5; i++){
-                // const square = createElement("div", "square")
-                const square = createElement ("span", "number")
-                container.append(square);
-                // square.append(span)
-                square.innerHTML = arrayNum[i]
-            } 
-        }  
-
-        // aggiungo timer
+        for (i = 0; i < 5; i++){
+            // const square = createElement("div", "square")
+            const square = createElement ("span", "number")
+            container.append(square);
+            // square.append(span)
+            square.innerHTML = arrayNum[i]
+        }
+            
+          // aggiungo timer cambio classe
         setTimeout(
             function(){
                 container.classList.add("hidden")
             },
-            2000
+            3000
         )
         
-        )
-        
-    
+        // aggiungo timer prompt
+        setTimeout(
+            function(){
+                for (i = 0; i < 5; i++){
+                    let numUser = parseInt(prompt("inserisci un numero"))
+                    console.log(numUser)
+
+                    if (arrayNum.includes(numUser)){
+                        console.log("daje ce sta")
+                        punteggio++
+                        risultato.innerHTML = "Complimenti hai indovinato " + punteggio + " numeri"
+                    } else console.log("Mi dispiace è il numero sbagliato")
+                    // risultato.innerHTML = ("Mi dispiace non hai indovinato nulla")
+                }
+            },
+            3500
+        ) 
+    }
+)
 
 
 // ********************** FUNZIONI ************************
@@ -74,9 +94,3 @@ function arrayRamdomNumber(min, max, lunghezzaArray){
 function numeriRandom (numMin, numMax){
     return Math.floor(Math.random() * (numMax - numMin +1) + numMin);
 }
-
-// // FUNZIONE PER AGGIUNGERE CLASSE
-// function addClass (elementToAdd, classAdd){
-//     elementToAdd.classList.add(classAdd)
-// }
-

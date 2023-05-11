@@ -1,14 +1,37 @@
-#button-play{
-    margin: 50px;
-    padding: 10px 30px;
-    font-size: 20px;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-#container{
-    width: 80%;
-    height: 50px;
+header, footer{
+    width: 50%;
     margin: auto;
-    border: 1px solid black;
+    text-align: center;
+}
+
+main{
+    background-color: rgb(71, 71, 236);
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+#button-play{
+    margin: 20px 200px;
+    padding: 30px 150px;
+    font-size: 50px;
+    background-color: orange;
+    border-radius: 20px;
+    color: white;
+    border: none;
+}
+
+#container, #container-input{
+    width: 50%;
+    height: 100px;
+    padding: 25px;
+    margin: auto;
     text-align: center;
 }
 
@@ -17,11 +40,22 @@
 }
 
 .number{
-    color: green;
+    color: rgb(255, 255, 255);
     padding: 20px;
     font-size: 50px;
 }
 
+.block{
+    display: block;
+}
+
 .hidden{
     display: none;
+}
+
+.input-number{
+    text-align: center;
+    height: 30px;
+    width: 15%;
+    font-size: 30px;
 }
